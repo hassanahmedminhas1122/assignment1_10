@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks and Percentage Calculator</title>
+</head>
+<body>
+    <h1>Calculate Total Marks and Percentage</h1>
+
+    <button onclick="getSubjectsAndMarks()">Start Calculation</button>
+
+    <h2>Results:</h2>
+    <p id="totalMarks"></p>
+    <p id="percentage"></p>
+
+    <script>
+        function getSubjectsAndMarks() {
+            // Take subject names from user
+            let subject1 = prompt("Enter the name of the first subject:");
+            let subject2 = prompt("Enter the name of the second subject:");
+            let subject3 = prompt("Enter the name of the third subject:");
+
+            // Total marks for each subject
+            const totalMarksPerSubject = 100;
+
+            // Take obtained marks for each subject from user
+            let marks1 = parseFloat(prompt("Enter the obtained marks for " + subject1 + ":"));
+            let marks2 = parseFloat(prompt("Enter the obtained marks for " + subject2 + ":"));
+            let marks3 = parseFloat(prompt("Enter the obtained marks for " + subject3 + ":"));
+
+            // Calculate total obtained marks
+            let totalMarksObtained = marks1 + marks2 + marks3;
+
+            // Total possible marks
+            let totalPossibleMarks = totalMarksPerSubject * 3;
+
+            // Calculate percentage
+            let percentage = (totalMarksObtained / totalPossibleMarks) * 100;
+
+            // Display the results
+            document.getElementById('totalMarks').innerText = "Total Marks: " + totalMarksObtained + " out of " + totalPossibleMarks;
+            document.getElementById('percentage').innerText = "Percentage: " + percentage.toFixed(2) + "%";
+        }
+    </script>
+</body>
+</html>
